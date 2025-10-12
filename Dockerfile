@@ -11,6 +11,9 @@ RUN ./mvnw dependency:go-offline || true
 # Copy semua source code ke container
 COPY . .
 
+# Beri izin eksekusi ke mvnw
+RUN chmod +x mvnw
+
 # Build aplikasi Spring Boot (hasil jar di target/)
 RUN ./mvnw clean package -DskipTests
 
