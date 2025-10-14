@@ -20,8 +20,8 @@ A simple API built with Spring Boot to upload and display images. This project i
 
 1.  **Clone this repository:**
     ```bash
-    git clone https://github.com/fahmi-dot/birth-day-api.git
-    cd birth-day-api
+    git clone https://github.com/fahmi-dot/birth-day.git
+    cd birth-day
     ```
 
 2.  **Configure the Environment**
@@ -30,14 +30,14 @@ A simple API built with Spring Boot to upload and display images. This project i
 
     ```env
     # PostgreSQL Database Configuration
-    DATABASE_URL=jdbc:postgresql://localhost:5432/your_database_name
-    DATABASE_USERNAME=your_database_username
-    DATABASE_PASSWORD=your_database_password
+    DATABASE_URL=jdbc:postgresql://<host>:<port>/<database>
+    DATABASE_USERNAME=<username>
+    DATABASE_PASSWORD=<password>
 
     # Cloudinary Configuration
-    CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-    CLOUDINARY_API_KEY=your_cloudinary_api_key
-    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+    CLOUDINARY_CLOUD_NAME=<cloud_name>
+    CLOUDINARY_API_KEY=<api_key>
+    CLOUDINARY_API_SECRET=<api_secret>
     ```
 
 3.  **Running the Application (Locally)**
