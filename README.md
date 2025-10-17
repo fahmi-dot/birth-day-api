@@ -20,8 +20,8 @@ A simple API built with Spring Boot to upload and display images. This project i
 
 1.  **Clone this repository:**
     ```bash
-    git clone https://github.com/fahmi-dot/birth-day.git
-    cd birth-day
+    git clone https://github.com/fahmi-dot/birth-day-api.git
+    cd birth-day-api
     ```
 
 2.  **Configure the Environment**
@@ -49,21 +49,6 @@ A simple API built with Spring Boot to upload and display images. This project i
     ```
 
     The application will be running at `http://localhost:8080`.
-
-4.  **Running the Application (Docker)**
-
-    Ensure Docker is running on your system.
-
-    -   **Build the Docker image:**
-        ```bash
-        docker build -t birth-day-api .
-        ```
-
-    -   **Run the Docker container:**
-        ```bash
-        docker run -p 8080:8080 --env-file .env birth-day-api
-        ```
-        *Note: This command assumes all environment variables are defined in the `.env` file.*
 
 ## API Documentation
 
