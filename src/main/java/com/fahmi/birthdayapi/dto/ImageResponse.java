@@ -9,4 +9,5 @@ public class ImageResponse {
     private String id;
     private String imageUrl;
     private String caption;
+    private String createdBy;
 }

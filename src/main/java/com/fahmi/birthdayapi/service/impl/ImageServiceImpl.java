@@ -21,7 +21,7 @@ public class ImageServiceImpl implements ImageService {
     private final ImageRepository imageRepository;
 
     @Override
-    public void uploadImage(String caption, MultipartFile file) {
+    public void uploadImage(String createdBy, String caption, MultipartFile file) {
         String fileName = file.getOriginalFilename();
         if (fileName == null || (!fileName.endsWith(".jpg") && !fileName.endsWith(".jpeg") && !fileName.endsWith(".png"))) {
             throw new RuntimeException("Only JPG/PNG files are allowed.");
@@ -30,6 +30,7 @@ public class ImageServiceImpl implements ImageService {
         Image image = Image.builder()
                 .imageUrl(imageUrl)
                 .caption(caption)
+                .createdBy(createdBy)
                 .build();
         imageRepository.save(image);
     }
@@ -41,6 +42,7 @@ public class ImageServiceImpl implements ImageService {
                 .id(i.getId())
                 .imageUrl(i.getImageUrl())
                 .caption(i.getCaption())
+                .createdBy(i.getCreatedBy())
                 .build()).toList();
     }
 

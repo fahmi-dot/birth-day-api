@@ -21,10 +21,11 @@ public class PublicController {
 
     @PostMapping("/image")
     public ResponseEntity<?> uploadImage(
+            @RequestParam String createdBy,
             @RequestParam String caption,
             @RequestParam("file") MultipartFile file
     ) {
-        imageService.uploadImage(caption, file);
+        imageService.uploadImage(createdBy, caption, file);
         return ResponseEntity.ok().build();
     }
 

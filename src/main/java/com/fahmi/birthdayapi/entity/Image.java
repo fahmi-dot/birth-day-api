@@ -18,4 +18,7 @@ public class Image {
     private String imageUrl;
 
     private String caption;
+
+    @Column(name = "created_by")
+    private String createdBy;
 }
