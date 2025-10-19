@@ -1,14 +1,12 @@
 package com.fahmi.birthdayapi.controller;
 
 import com.fahmi.birthdayapi.dto.ImageResponse;
-import com.fahmi.birthdayapi.entity.Image;
+import com.fahmi.birthdayapi.dto.SpeechResponse;
 import com.fahmi.birthdayapi.service.ImageService;
+import com.fahmi.birthdayapi.service.SpeechService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -18,8 +16,9 @@ import java.util.List;
 public class PublicController {
 
     private final ImageService imageService;
+    private final SpeechService speechService;
 
-    @PostMapping("/image")
+    @PostMapping("/images")
     public ResponseEntity<?> uploadImage(
             @RequestParam String createdBy,
             @RequestParam String caption,
@@ -29,9 +28,21 @@ public class PublicController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/image")
-    public ResponseEntity<?> getAllImage() {
+    @GetMapping("/images")
+    public ResponseEntity<?> getAllImages() {
         List<ImageResponse> response = imageService.getAllImages();
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/speeches")
+    public ResponseEntity<?> uploadSpeech(@RequestBody SpeechResponse request) {
+        speechService.uploadSpeech(request);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/speeches")
+    public ResponseEntity<?> getAllSpeeches() {
+        List<SpeechResponse> response = speechService.getAllSpeech();
         return ResponseEntity.ok(response);
     }
 }
