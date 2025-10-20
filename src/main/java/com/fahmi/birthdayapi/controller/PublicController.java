@@ -51,4 +51,9 @@ public class PublicController {
         speechService.deleteSpeech(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<?> healthCheck() {
+        return ResponseEntity.ok("Application is running!");
+    }
 }
