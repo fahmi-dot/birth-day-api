@@ -8,4 +8,6 @@ public interface SpeechService {
     void uploadSpeech(SpeechResponse request);
 
     List<SpeechResponse> getAllSpeech();
+
+    void deleteSpeech(String id);
 }

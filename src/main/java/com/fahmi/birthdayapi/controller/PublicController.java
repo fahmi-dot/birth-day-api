@@ -45,4 +45,10 @@ public class PublicController {
         List<SpeechResponse> response = speechService.getAllSpeech();
         return ResponseEntity.ok(response);
     }
+
+    @DeleteMapping("/speeches/{id}")
+    public ResponseEntity<?> deleteSpeech(@PathVariable String id) {
+        speechService.deleteSpeech(id);
+        return ResponseEntity.ok().build();
+    }
 }

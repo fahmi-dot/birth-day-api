@@ -35,4 +35,9 @@ public class SpeechServiceImpl implements SpeechService {
                .content(s.getContent())
                .build()).toList();
     }
+
+    @Override
+    public void deleteSpeech(String id) {
+        speechRepository.deleteById(id);
+    }
 }
