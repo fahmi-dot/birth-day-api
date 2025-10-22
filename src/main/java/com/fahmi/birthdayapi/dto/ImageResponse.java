@@ -7,6 +7,7 @@ import lombok.Data;
 @Builder
 public class ImageResponse {
     private String id;
+    private String type;
     private String imageUrl;
     private String caption;
     private String createdBy;

@@ -28,6 +28,7 @@ public class ImageServiceImpl implements ImageService {
         }
         String imageUrl = uploadFile(file, "birth-day");
         Image image = Image.builder()
+                .type("photo")
                 .imageUrl(imageUrl)
                 .caption(caption)
                 .createdBy(createdBy)
@@ -40,6 +41,7 @@ public class ImageServiceImpl implements ImageService {
         List<Image> images = imageRepository.findAll();
         return images.stream().map((i) -> ImageResponse.builder()
                 .id(i.getId())
+                .type(i.getType())
                 .imageUrl(i.getImageUrl())
                 .caption(i.getCaption())
                 .createdBy(i.getCreatedBy())
